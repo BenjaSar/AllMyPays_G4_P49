@@ -8,7 +8,7 @@ Authors:
 
 - Lina Bocanegra
 - Andrés Paez
-- Paola 
+- Jenny Paola  Rodríguez  
 - Sebastián Romero
 - Fabian S
 
