@@ -18,7 +18,8 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:capitalize="words"
+            android:text="Registro" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -130,8 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Male"
-                android:textSize="15sp"
-                android:onClick="onRadioButtonClicked"/>
+                android:textSize="15sp" />
 
             <RadioButton
                 android:id="@+id/radioButton_female"
@@ -139,8 +139,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="Female"
-                android:textSize="15sp"
-                android:onClick="onRadioButtonClicked"/>
+                android:textSize="15sp" />
         </RadioGroup>
 
         <Button
