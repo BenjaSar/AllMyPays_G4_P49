@@ -88,7 +88,7 @@
             app:backgroundTint="@color/colorAccent" />
 
         <Button
-            android:id="@+id/showRegister"
+            android:id="@+id/createAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

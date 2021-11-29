@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:capitalize="words"
-            android:text="Registro" />
+            android:text="@string/register" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -33,7 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Enter Full Name"
+                android:hint="@string/enter_full_name"
                 android:inputType="text"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/enter_user_name"
+                android:hint="@string/hint_enter_user_name"
                 android:inputType="text"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +69,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/enter_email"
+                android:hint="@string/hint_enter_email"
                 android:inputType="text"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -88,7 +88,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Enter Password"
+                android:hint="@string/hint_enter_password"
                 android:inputType="textPassword"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -107,7 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Enter Confirm Password"
+                android:hint="@string/enter_confirm_password"
                 android:inputType="textPassword"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +122,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gander: "
+                android:text="@string/gender"
                 android:textSize="15sp"/>
 
             <RadioButton
@@ -130,7 +130,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Male"
+                android:text="@string/male"
                 android:textSize="15sp" />
 
             <RadioButton
@@ -138,7 +138,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:text="Female"
+                android:text="@string/female"
                 android:textSize="15sp" />
         </RadioGroup>
 
@@ -159,7 +159,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:background="@drawable/button_rounded"
-            android:text="Show users"
+            android:text="@string/show_users"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             app:backgroundTint="@color/colorAccent" />
