@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registro">
+    tools:context=".LoginFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,13 +13,11 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:capitalize="words"
-            android:text="Registro" />
+            android:text="@string/user_login" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/name"
@@ -27,16 +25,7 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:textColorHint="@color/colorAccent">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Full Name"
-                android:inputType="text"
-                android:textSize="15sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:textColorHint="@color/colorAccent"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/userName"
@@ -45,16 +34,7 @@
             android:layout_marginTop="5dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:textColorHint="@color/colorAccent">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="@string/enter_user_name"
-                android:inputType="text"
-                android:textSize="15sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:textColorHint="@color/colorAccent"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email"
@@ -69,7 +49,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/enter_email"
+                android:autofillHints="true"
+                android:hint="@string/hint_user_email"
                 android:inputType="text"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -78,77 +59,30 @@
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
             app:passwordToggleEnabled="true"
+            app:errorEnabled="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="Enter Password"
+                android:hint="@string/hint_password"
                 android:inputType="textPassword"
                 android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirmPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            app:passwordToggleEnabled="true"
-            android:textColorHint="@color/colorAccent">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Confirm Password"
-                android:inputType="textPassword"
-                android:textSize="15sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <RadioGroup
-            android:id="@+id/gander"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gander: "
-                android:textSize="15sp"/>
-
-            <RadioButton
-                android:id="@+id/radioButton_male"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Male"
-                android:textSize="15sp" />
-
-            <RadioButton
-                android:id="@+id/radioButton_female"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:text="Female"
-                android:textSize="15sp" />
-        </RadioGroup>
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_rounded"
-            android:text="Register"
+            android:text="@string/login"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             app:backgroundTint="@color/colorAccent" />
@@ -157,9 +91,9 @@
             android:id="@+id/showRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_rounded"
-            android:text="Show users"
+            android:text="@string/create_account"
             android:textColor="#FFFFFF"
             android:textSize="15sp"
             app:backgroundTint="@color/colorAccent" />
