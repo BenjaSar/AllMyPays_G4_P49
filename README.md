@@ -38,6 +38,69 @@ El proyecto se encuentra conformado por la siguiente estructura de directorios y
 
 ```
 .
+├── app
+│   ├── build.gradle
+│   ├── local.properties
+│   ├── proguard-rules.pro
+│   └── src
+│       └── main
+│           ├── AndroidManifest.xml
+│           ├── java
+│           │   └── com
+│           │       └── example
+│           │           └── allmypays
+│           │               ├── LoginFragment.kt
+│           │               ├── MainActivity.kt
+│           │               ├── NavigationHost.kt
+│           │               ├── ProductGridFragment.kt
+│           │               └── Registro.kt
+│           └── res
+│               ├── animator
+│               ├── drawable
+│               │   ├── button_rounded.xml
+│               │   └── ic_launcher_background.xml
+│               ├── drawable-v24
+│               │   └── ic_launcher_foreground.xml
+│               ├── layout
+│               │   ├── activity_main.xml
+│               │   ├── activity_registro.xml
+│               │   ├── activity_user.xml
+│               │   ├── login_fragment.xml
+│               │   └── product_grid_fragment.xml
+│               ├── menu
+│               ├── mipmap-anydpi-v26
+│               │   ├── ic_launcher_round.xml
+│               │   └── ic_launcher.xml
+│               ├── mipmap-hdpi
+│               │   ├── ic_launcher_round.webp
+│               │   └── ic_launcher.webp
+│               ├── mipmap-mdpi
+│               │   ├── ic_launcher_round.webp
+│               │   └── ic_launcher.webp
+│               ├── mipmap-xhdpi
+│               │   ├── ic_launcher_round.webp
+│               │   └── ic_launcher.webp
+│               ├── mipmap-xxhdpi
+│               │   ├── ic_launcher_round.webp
+│               │   └── ic_launcher.webp
+│               ├── mipmap-xxxhdpi
+│               │   ├── ic_launcher_round.webp
+│               │   └── ic_launcher.webp
+│               ├── values
+│               │   ├── colors.xml
+│               │   ├── strings.xml
+│               │   ├── styles.xml
+│               │   └── themes.xml
+│               └── values-night
+│                   └── themes.xml
+├── build.gradle
+├── docs
+├── gradle.properties
+├── gradlew
+├── local.properties
+├── README.md
+├── settings.gradle
+└── src
 ```
 
 ## LICENCIA
