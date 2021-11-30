@@ -3,7 +3,7 @@ package com.example.allmypays
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.allmypays.ui.fragments.LoginFragment
+import com.example.allmypays.view.ui.fragments.LoginFragment
 
 class MainActivity : AppCompatActivity(), NavigationHost {
 

@@ -24,7 +24,7 @@
             android:exported="false"
             tools:ignore="Instantiatable" />
         <activity
-            android:name=".Registro"
+            android:name=".Register_old"
             android:exported="false" />
         <activity
             android:name=".User"

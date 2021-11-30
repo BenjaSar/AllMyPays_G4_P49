@@ -1,4 +1,4 @@
-package com.example.allmypays.ui.fragments
+package com.example.allmypays.view.ui.fragments
 
 
 import android.os.Bundle
@@ -7,9 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.allmypays.HomeFragment
-import com.example.allmypays.NavigationHost
-import com.example.allmypays.R
+import com.example.allmypays.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
 
@@ -32,6 +30,10 @@ class LoginFragment : Fragment() {
                 // Navigate to the next Fragment.
                 (activity as NavigationHost).navigateTo(HomeFragment(), false)
             }
+        }
+
+        view.createAccount.setOnClickListener {
+            (activity as NavigationHost).navigateTo(RegistroFragment(),false)
         }
 
         // Clear the error once more than 8 characters are typed.
