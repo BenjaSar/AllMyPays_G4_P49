@@ -31,5 +31,6 @@
     <string name="editar">EDITAR</string>
     <string name="eliminar">ELIMINAR</string>
     <string name="editar_recordatorio">Editar recordatorio</string>
+    <string name="registro">Registro</string>
 
 </resources>

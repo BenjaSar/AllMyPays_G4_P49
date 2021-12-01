@@ -33,15 +33,20 @@
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_registro.xml" value="0.27898550724637683" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_user.xml" value="0.3546875" />
+        <entry key="app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_outline_home_24.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_actualizacionfinalizado.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_confirmaractualizacion.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_crear.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_navigation_host.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/activity_registro.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.20729166666666668" />
-        <entry key="app/src/main/res/layout/fragment_registro.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/fragment_registro.xml" value="0.25" />
         <entry key="app/src/main/res/layout/home_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/mis_recordatorios.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_grid_fragment.xml" value="0.12" />
       </map>
     </option>

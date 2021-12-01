@@ -14,12 +14,12 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (savedInstanceState == null) {
+       /* if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
                 .add(R.id.container, LoginFragment())
                 .commit()
-        }
+        }*/
     }
 
     /**
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         transaction.commit()
     }
 
-    fun registrarse(view: View) {
+   fun registrarse(view: View) {
         val intent: Intent = Intent(this, RegistroFragment::class.java)
         startActivity(intent)
     }
