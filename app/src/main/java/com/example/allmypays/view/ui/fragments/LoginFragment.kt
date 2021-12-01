@@ -32,9 +32,6 @@ class LoginFragment : Fragment() {
             }
         }
 
-        view.createAccount.setOnClickListener {
-            (activity as NavigationHost).navigateTo(RegistroFragment(),false)
-        }
 
         // Clear the error once more than 8 characters are typed.
         view.password_edit_text.setOnKeyListener { _, _, _ ->
