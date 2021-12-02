@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id= "@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="434dp"
+        android:layout_height="573dp"
+        android:background="@drawable/rectangle_3"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="194dp"
+            android:layout_height="111dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="94dp"
+            android:layout_marginEnd="120dp"
+            app:srcCompat="@drawable/logo2" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="375dp"
+        android:layout_height="362dp"
+        android:layout_marginTop="180dp"
+        android:background="@drawable/button_rounded_border"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/bienvenido"
+            android:layout_width="358dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="42dp"
+            android:gravity="center"
+            android:text="@string/bienvenido"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="40dp"
+            tools:ignore="RtlCompat" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bienvenido"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="42dp"
+            android:text="La mejor forma de recordar tus pagos"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/iniciar"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/button_rounded"
+            android:gravity="center"
+            android:text="@string/login"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            app:backgroundTint="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/registro"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iniciar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="21dp"
+            android:background="@drawable/button_rounded"
+            android:gravity="center"
+            android:text="Registrarse"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            app:backgroundTint="@color/colorAccent" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,12 +1,10 @@
 package com.example.allmypays
 
-import android.content.Intent
+
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.allmypays.view.ui.fragments.LoginFragment
-import com.example.allmypays.view.ui.fragments.RegistroFragment
+import com.example.allmypays.view.ui.fragments.MainFragment
 
 class MainActivity : AppCompatActivity(), NavigationHost {
 
@@ -14,12 +12,12 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-       /* if (savedInstanceState == null) {
+        if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
-                .add(R.id.container, LoginFragment())
+                .add(R.id.container, MainFragment())
                 .commit()
-        }*/
+        }
     }
 
     /**
@@ -38,15 +36,5 @@ class MainActivity : AppCompatActivity(), NavigationHost {
         }
 
         transaction.commit()
-    }
-
-   fun registrarse(view: View) {
-        val intent: Intent = Intent(this, RegistroFragment::class.java)
-        startActivity(intent)
-    }
-
-    fun iniciarSesion(view: View) {
-        val intent: Intent = Intent(this, LoginFragment::class.java)
-        startActivity(intent)
     }
 }

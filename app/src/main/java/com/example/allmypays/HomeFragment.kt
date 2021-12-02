@@ -14,4 +14,5 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.home_fragment, container, false)
     }
+
 }
