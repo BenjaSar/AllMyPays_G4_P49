@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.allmypays.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
@@ -20,7 +22,6 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.login_fragment, container, false)
-        //Evento next_button para validar la contraseña
         view.login.setOnClickListener {
             if (!isPasswordValid(password_edit_text.text!!)) {
                 password.error = getString(R.string.error_password)
@@ -28,7 +29,8 @@ class LoginFragment : Fragment() {
                 //Clear the error
                 password.error = null
                 // Navigate to the next Fragment.
-                (activity as NavigationHost).navigateTo(HomeFragment(), false)
+            (activity as NavigationHost).navigateTo(HomeFragment(), false)
+                view.visibility = GONE
             }
         }
 

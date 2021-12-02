@@ -1,13 +1,14 @@
 package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
+import android.text.TextUtils.isEmpty
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.allmypays.HomeFragment
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
 
 // TODO: Rename parameter arguments, choose names that match
