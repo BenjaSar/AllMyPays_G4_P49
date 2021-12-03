@@ -12,6 +12,9 @@
         android:theme="@style/Theme.AllMyPays">
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +26,6 @@
             android:name=".NavigationHost"
             android:exported="false"
             tools:ignore="Instantiatable" />
-
     </application>
 
 </manifest>
