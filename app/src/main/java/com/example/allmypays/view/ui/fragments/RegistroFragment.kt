@@ -43,6 +43,7 @@ class RegistroFragment : Fragment() {
 
         viewRegister.register.setOnClickListener {
             (activity as NavigationHost).navigateTo(LoginFragment(), false)
+            viewRegister.visibility = View.GONE
         }
 
         return viewRegister
