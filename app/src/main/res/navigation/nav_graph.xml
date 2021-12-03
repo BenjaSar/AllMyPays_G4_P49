@@ -3,45 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/navmainFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/navloginFragment"
         android:name="com.example.allmypays.view.ui.fragments.LoginFragment"
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            app:destination="@id/navhomeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/registroFragment"
+        android:id="@+id/navregistroFragment"
         android:name="com.example.allmypays.view.ui.fragments.RegistroFragment"
         android:label="fragment_registro"
         tools:layout="@layout/fragment_registro" >
         <action
             android:id="@+id/action_registroFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/navloginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/navhomeFragment"
         android:name="com.example.allmypays.HomeFragment"
         android:label="home_fragment"
         app:popUpTo="@navigation/nav_graph"
         app:popUpToInclusive="true"
         tools:layout="@layout/home_fragment" />
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/navmainFragment"
         android:name="com.example.allmypays.view.ui.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
+            app:destination="@id/navloginFragment"
             app:popUpToInclusive="true"
             app:popUpTo="@navigation/nav_graph"/>
         <action
             android:id="@+id/action_mainFragment_to_registroFragment"
-            app:destination="@id/registroFragment" />
+            app:destination="@id/navregistroFragment" />
     </fragment>
 </navigation>

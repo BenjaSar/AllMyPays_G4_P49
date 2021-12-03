@@ -48,12 +48,12 @@ class MainFragment : Fragment() {
 
         val buttonIniciar = view.findViewById<Button>(R.id.iniciar)
         buttonIniciar?.setOnClickListener {
-            findNavController().navigate(R.id.loginFragment)
+            findNavController().navigate(R.id.navloginFragment)
         }
 
         val buttonRegistrarse = view.findViewById<Button>(R.id.registro)
         buttonRegistrarse?.setOnClickListener {
-            findNavController().navigate(R.id.registroFragment)
+            findNavController().navigate(R.id.navregistroFragment)
         }
 
     }
