@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.allmypays.NavigationHost
+import android.widget.ImageButton
+import androidx.navigation.fragment.findNavController
 import com.example.allmypays.R
-import kotlinx.android.synthetic.main.fragment_registro.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -16,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RegistroFragment.newInstance] factory method to
+ * Use the [HomeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RegistroFragment : Fragment() {
+class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,14 +37,16 @@ class RegistroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val viewRegister = inflater.inflate(R.layout.fragment_registro, container, false)
+        return inflater.inflate(R.layout.home_fragment, container, false)
+    }
 
-        viewRegister.register.setOnClickListener {
-            (activity as NavigationHost).navigateTo(LoginFragment(), false)
-            viewRegister.visibility = View.GONE
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val viewPerfil = view.findViewById<ImageButton>(R.id.image_21)
+        viewPerfil.setOnClickListener {
+            findNavController().navigate(R.id.navperfilFragment)
         }
-
-        return viewRegister
     }
 
     companion object {
@@ -54,12 +56,12 @@ class RegistroFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RegistroFragment.
+         * @return A new instance of fragment HomeFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RegistroFragment().apply {
+            HomeFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

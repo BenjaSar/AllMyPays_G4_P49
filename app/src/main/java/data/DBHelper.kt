@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.fragment.app.FragmentActivity
 
-class DBHelper(context:FragmentActivity?):
+/*class DBHelper(context:FragmentActivity?):
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATA_VERSION) {
     companion object {
         private val DATABASE_NAME = "info"
@@ -44,5 +44,5 @@ class DBHelper(context:FragmentActivity?):
 
     }
     }
-
+*/
 

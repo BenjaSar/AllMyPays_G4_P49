@@ -11,7 +11,7 @@
         android:label="login_fragment"
         tools:layout="@layout/login_fragment" >
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
+            android:id="@+id/action_navloginFragment_to_homeFragment_old"
             app:destination="@id/navhomeFragment" />
     </fragment>
     <fragment
@@ -23,13 +23,6 @@
             android:id="@+id/action_registroFragment_to_loginFragment"
             app:destination="@id/navloginFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/navhomeFragment"
-        android:name="com.example.allmypays.HomeFragment"
-        android:label="home_fragment"
-        app:popUpTo="@navigation/nav_graph"
-        app:popUpToInclusive="true"
-        tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/navmainFragment"
         android:name="com.example.allmypays.view.ui.fragments.MainFragment"
@@ -43,5 +36,19 @@
         <action
             android:id="@+id/action_mainFragment_to_registroFragment"
             app:destination="@id/navregistroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navperfilFragment"
+        android:name="com.example.allmypays.view.ui.fragments.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/navhomeFragment"
+        android:name="com.example.allmypays.HomeFragment_old"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_old_to_navperfilFragment"
+            app:destination="@id/navperfilFragment" />
     </fragment>
 </navigation>
