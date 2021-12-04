@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/MISIONTIC/AllMyPays/AllMyPays_G4_P49/app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/drawable/ic_outline_person_add_24.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/drawable/paso.xml" value="0.215625" />
@@ -22,10 +21,12 @@
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/activity_recordatorio1.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/activity_recordatorio3.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/activity_recordatoriofinalizado.xml" value="0.15" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/activity_user.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/fragment_main.xml" value="0.1" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/fragment_registro.xml" value="0.22" />
-        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/home_fragment.xml" value="0.22" />
-        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/login_fragment.xml" value="0.16" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/home_fragment.xml" value="0.18" />
+        <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/login_fragment.xml" value="0.1" />
         <entry key="..\:/Users/linab/AndroidStudioProjects/AllMyPays_G4_P49/app/src/main/res/layout/mis_recordatorios.xml" value="0.18125" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proecto Final Commit/app/src/main/res/drawable/button_rounded.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proecto Final Commit/app/src/main/res/layout/activity_registro.xml" value="0.29846014492753625" />
@@ -34,21 +35,15 @@
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_registro.xml" value="0.27898550724637683" />
         <entry key="..\:/Users/pipep/Desktop/Mision_TIC_2021/Proyecto Final/AllMyPays_G4_P49/app/src/main/res/layout/activity_user.xml" value="0.3546875" />
-        <entry key="app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_outline_home_24.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_actualizacionfinalizado.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_confirmaractualizacion.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_crear.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="app/src/main/res/layout/activity_navigation_host.xml" value="0.20729166666666668" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1381340579710145" />
         <entry key="app/src/main/res/layout/activity_registro.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_user.xml" value="0.20729166666666668" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.18795289855072464" />
-        <entry key="app/src/main/res/layout/fragment_registro.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.16" />
+        <entry key="app/src/main/res/layout/fragment_registro.xml" value="0.14" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.1" />
         <entry key="app/src/main/res/layout/login_fragment.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/mis_recordatorios.xml" value="0.1" />
         <entry key="app/src/main/res/layout/product_grid_fragment.xml" value="0.12" />
       </map>
     </option>

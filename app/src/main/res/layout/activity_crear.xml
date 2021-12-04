@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="410dp"
+        android:layout_height="622dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="59dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="68dp"
+            android:text="@string/crear"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/group_10"
+            android:layout_width="322dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="133dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/paso" />
+
+        <View
+            android:id="@+id/rectangle_3"
+            android:layout_width="117dp"
+            android:layout_height="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="133dp"
+            android:background="@drawable/paso1"/>
+
+        <TextView
+            android:id="@+id/paso_1_de_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="304dp"
+            android:layout_marginTop="147dp"
+            android:layout_marginEnd="35dp"
+            android:gravity="top"
+            android:text="Paso 1 de 3"
+            android:textColor="#7B7B7B"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/group_10"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="30dp"
+            android:text="Selecciona el tipo de entidad a la cual va el pago"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tipo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/button_rounded_border"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="Servicios publicos"
+            android:textColorHint="@color/colorPrimaryDark"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/tipos_entidad"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="false"
+                android:inputType="none"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tipo"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:text="Ingresa el nombre de la entidad"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/register"
+            android:layout_below="@+id/textView5"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="79dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textSize="20sp"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded_border"
+                android:ems="10"
+                android:inputType="text"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="9dp"
+
+            android:background="@drawable/border"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:text="@string/siguiente"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
