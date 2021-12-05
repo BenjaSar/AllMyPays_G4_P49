@@ -20,7 +20,7 @@ class HomeFragment_old : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val viewPerfil = view.findViewById<ImageButton>(R.id.image_21)
+        val viewPerfil = view.findViewById<ImageButton>(R.id.profileBtn)
         viewPerfil.setOnClickListener{
             findNavController().navigate(R.id.navperfilFragment)
         }
