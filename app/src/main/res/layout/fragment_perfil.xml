@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".view.ui.fragments.RegistroFragment">
+    tools:context=".view.ui.fragments.PerfilFragment"
+    app:navGraph="@navigation/nav_graph"
+    app:defaultNavHost="true">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -27,35 +29,21 @@
             android:layout_marginTop="90dp"
             android:layout_marginEnd="42dp"
             android:gravity="left"
-            android:text="@string/registro"
+            android:text="@string/mi_perfil"
             android:textAlignment="textStart"
             android:textColor="@color/white"
             android:textSize="40dp"
             tools:ignore="RtlCompat" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="367dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="42dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginEnd="42dp"
-            android:text="Ingresa la siguiente información crear tu cuenta en All My Pays"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="363dp"
-        android:layout_height="388dp"
+        android:layout_width="362dp"
+        android:layout_height="502dp"
         android:layout_marginTop="92dp"
-        android:elevation="15dp"
         android:background="@drawable/button_rounded_border"
         android:backgroundTint="@color/white"
+        android:elevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,7 +53,8 @@
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorPrimaryDark"
@@ -78,6 +67,8 @@
                 android:layout_gravity="center"
                 android:background="@drawable/button_rounded_border"
                 android:ems="10"
+                android:focusable="false"
+                android:clickable="false"
                 android:hint="Nombre completo"
                 android:inputType="text"
                 android:textSize="18sp" />
@@ -99,6 +90,8 @@
                 android:layout_width="340dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:focusable="false"
+                android:clickable="false"
                 android:background="@drawable/button_rounded_border"
                 android:ems="10"
                 android:hint="@string/correo"
@@ -106,11 +99,27 @@
                 android:textSize="18sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="327dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="22dp"
+            android:text="@string/cambiar_contrase_a"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="162dp"
+            android:layout_below="@+id/textView"
+            android:layout_marginTop="15dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorPrimaryDark"
@@ -133,7 +142,8 @@
             android:id="@+id/confirm_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="235dp"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="15dp"
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorPrimaryDark"
@@ -153,21 +163,40 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/register"
+            android:id="@+id/confirmar"
             android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/confirm_password"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="54dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="54dp"
             android:background="@drawable/button_rounded"
             android:gravity="center"
-            android:text="Crear cuenta"
+            android:text="@string/confirmar"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             app:backgroundTint="@color/colorAccent" />
+
+        <Button
+            android:id="@+id/Cancelar"
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/confirmar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rojo"
+            android:gravity="center"
+            android:text="@string/cancelar"
+            android:textColor="#BF0808"
+            android:textSize="25sp"
+            app:backgroundTint="@drawable/rojo" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
