@@ -18,13 +18,13 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="194dp"
-            android:layout_height="111dp"
+            android:layout_width="wrap_content"
+            android:layout_height="135dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="120dp"
-            android:layout_marginTop="94dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="120dp"
             app:srcCompat="@drawable/logo2" />
     </RelativeLayout>
@@ -32,7 +32,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="375dp"
-        android:layout_height="362dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
         android:elevation="15dp"
         android:background="@drawable/button_rounded_border"
@@ -51,12 +51,14 @@
             android:layout_alignParentEnd="true"
             android:layout_gravity="center"
             android:layout_marginStart="42dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="21dp"
             android:layout_marginEnd="42dp"
+            android:fontFamily="@font/my_font"
             android:gravity="center"
             android:text="@string/bienvenido"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
+            android:textFontWeight="800"
             android:textSize="40dp"
             tools:ignore="RtlCompat" />
 
@@ -74,7 +76,9 @@
             android:text="La mejor forma de recordar tus pagos"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="20sp" />
+            android:textFontWeight="500"
+            android:fontFamily="@font/my_font"
+            android:textSize="18sp" />
 
 
         <Button
@@ -88,9 +92,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:background="@drawable/button_rounded"
+            android:fontFamily="@font/my_font"
             android:gravity="center"
+            android:letterSpacing="0"
             android:text="@string/login"
             android:textColor="@color/colorPrimaryDark"
+            android:textFontWeight="900"
             android:textSize="30sp"
             app:backgroundTint="@color/colorAccent" />
 
@@ -101,15 +108,17 @@
             android:layout_below="@+id/iniciar"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="21dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/button_rounded"
+            android:fontFamily="@font/my_font"
             android:gravity="center"
+            android:letterSpacing="0"
             android:text="Registrarse"
             android:textColor="@color/colorPrimaryDark"
+            android:textFontWeight="900"
             android:textSize="30sp"
             app:backgroundTint="@color/colorAccent" />
     </RelativeLayout>
