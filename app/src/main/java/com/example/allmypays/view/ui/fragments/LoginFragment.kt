@@ -25,11 +25,13 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         view.login.setOnClickListener {
-            if (!isPasswordValid(password_edit_text.text!!)) {
+            if (!isPasswordValid(password_edit_text.text!!) && !isValidString(etMail.text)) {
                 password.error = getString(R.string.error_password)
+                etMail.error = "Por favor ingresa un email valido"
             } else {
                 //Clear the error
                 password.error = null
+                etMail.error = null
                 // Navigate to the next Fragment.
             (activity as NavigationHost).navigateTo(HomeFragment(), false)
                 view.visibility = GONE
@@ -53,3 +55,7 @@ class LoginFragment : Fragment() {
 private fun isPasswordValid(text:Editable?): Boolean{
     return text != null && text.length>=8
 }
+private fun isValidString(text:Editable?):Boolean{
+    return text!=null && android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
+}
+
