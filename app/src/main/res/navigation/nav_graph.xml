@@ -41,22 +41,18 @@
         android:label="home_fragment"
         tools:layout="@layout/home_fragment">
         <action
-            android:id="@+id/action_navhomeFragment_to_navperfilFragment"
-            app:destination="@id/navperfilFragment" />
-        <action
             android:id="@+id/action_navhomeFragment_to_recordatorioFragment"
             app:destination="@id/navrecordatorioFragment" />
+        <action
+            android:id="@+id/action_navhomeFragment_to_navperfilFragment2"
+            app:destination="@id/navperfilFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navperfilFragment"
         android:name="com.example.allmypays.view.ui.fragments.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil">
-        <action
-            android:id="@+id/action_navperfilFragment_to_navmainFragment2"
-            app:destination="@id/navmainFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_perfil"/>
     <fragment
         android:id="@+id/navrecordatorioFragment"
         android:name="com.example.allmypays.view.ui.fragments.RecordatorioFragment"

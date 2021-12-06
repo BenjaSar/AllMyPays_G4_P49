@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
     tools:context=".view.ui.fragments.PerfilFragment"
     >
 
@@ -12,7 +11,6 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="428dp"
         android:layout_height="524dp"
-        android:background="@drawable/rectangle_3"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-11dp"
         tools:layout_editor_absoluteY="0dp">
@@ -29,8 +27,9 @@
             android:layout_marginEnd="42dp"
             android:gravity="left"
             android:text="@string/mi_perfil"
+            android:textStyle="bold"
             android:textAlignment="textStart"
-            android:textColor="@color/white"
+            android:textColor="@color/colorPrimary"
             android:textSize="40dp"
             tools:ignore="RtlCompat" />
     </RelativeLayout>
@@ -109,6 +108,7 @@
             android:layout_marginStart="21dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="22dp"
+            android:textStyle="bold"
             android:text="@string/cambiar_contrase_a"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
