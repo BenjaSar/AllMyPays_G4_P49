@@ -44,15 +44,17 @@
             android:id="@+id/action_navhomeFragment_to_recordatorioFragment"
             app:destination="@id/navrecordatorioFragment" />
         <action
-            android:id="@+id/action_navhomeFragment_to_navperfilFragment2"
-            app:destination="@id/navperfilFragment" />
+            android:id="@+id/action_navhomeFragment_to_navperfilFragment"
+            app:destination="@id/navperfilFragment"
+
+            />
     </fragment>
 
     <fragment
         android:id="@+id/navperfilFragment"
         android:name="com.example.allmypays.view.ui.fragments.PerfilFragment"
-        android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil"/>
+        android:label="perfil_fragment"
+        tools:layout="@layout/perfil_fragment" />
     <fragment
         android:id="@+id/navrecordatorioFragment"
         android:name="com.example.allmypays.view.ui.fragments.RecordatorioFragment"

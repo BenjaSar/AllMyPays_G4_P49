@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id = "@+id/home_Fragment"
     app:navGraph="@navigation/nav_graph"
     app:defaultNavHost="true"
     tools:context=".view.ui.fragments.HomeFragment">
@@ -128,7 +129,6 @@
         android:id="@+id/imageView11"
         android:layout_width="207dp"
         android:layout_height="131dp"
-
         android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

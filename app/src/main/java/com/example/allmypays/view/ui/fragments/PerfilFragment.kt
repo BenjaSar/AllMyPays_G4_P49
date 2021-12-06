@@ -35,7 +35,7 @@ class PerfilFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        return inflater.inflate(R.layout.perfil_fragment, container, false)
     }
 
     companion object {

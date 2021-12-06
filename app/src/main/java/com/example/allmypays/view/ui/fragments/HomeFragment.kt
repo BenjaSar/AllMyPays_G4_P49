@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -42,25 +43,13 @@ class HomeFragment : Fragment() {
             (activity as NavigationHost).navigateTo(RecordatorioFragment(), false)
             view.visibility = View.GONE
         }
+
+       view.image_21.setOnClickListener {
+           (activity as NavigationHost).navigateTo(PerfilFragment(), false)
+           view.visibility = View.GONE
+       }
         return view
     }
-
-
-    override fun onViewCreated(view:View, savedInstanceState:Bundle?){
-        super.onViewCreated(view, savedInstanceState)
-
-        val viewPerfil = view.findViewById<View>(R.id.image_21)
-       // val recordatorios = view.findViewById<View>(R.id.image_19)
-
-        viewPerfil?.setOnClickListener {
-            findNavController().navigate(R.id.navperfilFragment)
-        }
-
-        /*recordatorios?.setOnClickListener {
-            findNavController().navigate(R.id.navrecordatorioFragment)
-        }*/
-    }
-
 
     companion object {
         /**
