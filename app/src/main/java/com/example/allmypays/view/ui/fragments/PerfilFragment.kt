@@ -1,6 +1,7 @@
 package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.perfil_fragment.*
 import kotlinx.android.synthetic.main.perfil_fragment.view.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -41,6 +43,8 @@ class PerfilFragment : Fragment() {
         val view =  inflater.inflate(R.layout.perfil_fragment, container, false)
         view.Cancelar.setOnClickListener {
             (activity as NavigationHost).navigateTo(HomeFragment(), false)
+            view.visibility = View.GONE
+
         }
         return view
     }
@@ -49,7 +53,15 @@ class PerfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val buttonConfirmar = view.findViewById<Button>(R.id.confirmar)
         buttonConfirmar?.setOnClickListener {
-            findNavController().navigate(R.id.navperfilFragment)
+            if(!isValidString(txtIEmail.text!!) && !isPasswordValid(txtIpassword.text!!)){
+                txtIEmail.error = "Por favor ingresa un email valido"
+                txtIpassword.error = getString(R.string.error_password)
+            }
+            else{
+                txtIEmail.error = null
+                txtIpassword.error = null
+                findNavController().navigate(R.id.navperfilFragment)
+            }
         }
     }
     companion object {
@@ -71,4 +83,11 @@ class PerfilFragment : Fragment() {
                 }
             }
     }
+}
+
+private fun isValidString(text:Editable?):Boolean{
+    return text!=null && android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
+}
+private fun isPasswordValid(text:Editable?): Boolean{
+    return text != null && text.length>=8
 }
