@@ -1,16 +1,10 @@
 package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
-import android.text.Layout
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-<<<<<<< HEAD
-import androidx.constraintlayout.widget.ConstraintSet
-=======
-import android.widget.Button
->>>>>>> 2e61761adc3397cba2e3d8fa93d78b5160458c21
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
@@ -55,13 +49,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view:View, savedInstanceState:Bundle?){
         super.onViewCreated(view, savedInstanceState)
 
-<<<<<<< HEAD
         val viewPerfil = view.findViewById<View>(R.id.image_21)
        // val recordatorios = view.findViewById<View>(R.id.image_19)
 
-=======
-        val viewPerfil = view.findViewById<Button>(R.id.profileBtn)
->>>>>>> 2e61761adc3397cba2e3d8fa93d78b5160458c21
         viewPerfil?.setOnClickListener {
             findNavController().navigate(R.id.navperfilFragment)
         }
