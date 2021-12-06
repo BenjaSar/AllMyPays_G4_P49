@@ -9,16 +9,16 @@
         android:id="@+id/navloginFragment"
         android:name="com.example.allmypays.view.ui.fragments.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
-            android:id="@+id/action_navloginFragment_to_homeFragment_old"
+            android:id="@+id/action_navloginFragment_to_navhomeFragment"
             app:destination="@id/navhomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/navregistroFragment"
         android:name="com.example.allmypays.view.ui.fragments.RegistroFragment"
         android:label="fragment_registro"
-        tools:layout="@layout/fragment_registro" >
+        tools:layout="@layout/fragment_registro">
         <action
             android:id="@+id/action_registroFragment_to_loginFragment"
             app:destination="@id/navloginFragment" />
@@ -27,28 +27,39 @@
         android:id="@+id/navmainFragment"
         android:name="com.example.allmypays.view.ui.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_loginFragment"
-            app:destination="@id/navloginFragment"
-            app:popUpToInclusive="true"
-            app:popUpTo="@navigation/nav_graph"/>
+            app:destination="@id/navloginFragment" />
         <action
             android:id="@+id/action_mainFragment_to_registroFragment"
             app:destination="@id/navregistroFragment" />
     </fragment>
     <fragment
+        android:id="@+id/navhomeFragment"
+        android:name="com.example.allmypays.view.ui.fragments.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment">
+        <action
+            android:id="@+id/action_navhomeFragment_to_navperfilFragment"
+            app:destination="@id/navperfilFragment" />
+        <action
+            android:id="@+id/action_navhomeFragment_to_recordatorioFragment"
+            app:destination="@id/navrecordatorioFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/navperfilFragment"
         android:name="com.example.allmypays.view.ui.fragments.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
-    <fragment
-        android:id="@+id/navhomeFragment"
-        android:name="com.example.allmypays.HomeFragment_old"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" >
+        tools:layout="@layout/fragment_perfil">
         <action
-            android:id="@+id/action_homeFragment_old_to_navperfilFragment"
-            app:destination="@id/navperfilFragment" />
+            android:id="@+id/action_navperfilFragment_to_navmainFragment2"
+            app:destination="@id/navmainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/navrecordatorioFragment"
+        android:name="com.example.allmypays.view.ui.fragments.RecordatorioFragment"
+        android:label="mis_recordatorios"
+        tools:layout="@layout/mis_recordatorios" />
 </navigation>

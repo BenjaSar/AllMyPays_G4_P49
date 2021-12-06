@@ -3,14 +3,18 @@ package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.allmypays.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
+import java.util.regex.Pattern
 
 /**
  * Fragment representing the login screen for AllMyPays.
@@ -19,7 +23,6 @@ class LoginFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         view.login.setOnClickListener {
             if (!isPasswordValid(password_edit_text.text!!)) {

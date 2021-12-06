@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:navGraph="@navigation/nav_graph"
-    app:defaultNavHost="true"
-    tools:context=".HomeFragment_old">
+    tools:context=".view.ui.fragments.HomeFragment">
     <RelativeLayout
         android:id="@+id/relativeLayout3"
         android:layout_width="205dp"
@@ -43,7 +41,8 @@
             android:layout_marginStart="32dp"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="0dp"
-            android:text="nombre"
+            android:text="name"
+            android:clickable="true"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -73,7 +72,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_19" />
 
-    <ImageButton
+    <View
         android:id="@+id/image_21"
         android:layout_width="60dp"
         android:layout_height="60dp"
