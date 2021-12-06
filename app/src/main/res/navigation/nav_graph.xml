@@ -54,7 +54,16 @@
         android:id="@+id/navperfilFragment"
         android:name="com.example.allmypays.view.ui.fragments.PerfilFragment"
         android:label="perfil_fragment"
-        tools:layout="@layout/perfil_fragment" />
+        tools:layout="@layout/perfil_fragment" >
+        <action
+            android:id="@+id/action_navperfilFragment_to_navhomeFragment"
+            app:destination="@id/navhomeFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@navigation/nav_graph"/>
+        <action
+            android:id="@+id/action_navperfilFragment_self"
+            app:destination="@id/navperfilFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navrecordatorioFragment"
         android:name="com.example.allmypays.view.ui.fragments.RecordatorioFragment"

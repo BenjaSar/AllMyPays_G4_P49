@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.fragment.findNavController
+import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.perfil_fragment.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,15 +33,25 @@ class PerfilFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.perfil_fragment, container, false)
+        val view =  inflater.inflate(R.layout.perfil_fragment, container, false)
+        view.Cancelar.setOnClickListener {
+            (activity as NavigationHost).navigateTo(HomeFragment(), false)
+        }
+        return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val buttonConfirmar = view.findViewById<Button>(R.id.confirmar)
+        buttonConfirmar?.setOnClickListener {
+            findNavController().navigate(R.id.navperfilFragment)
+        }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
