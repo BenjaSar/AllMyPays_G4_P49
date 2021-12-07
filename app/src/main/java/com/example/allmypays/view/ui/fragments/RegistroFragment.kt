@@ -1,13 +1,16 @@
 package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.fragment_registro.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
+import kotlinx.android.synthetic.main.perfil_fragment.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -40,10 +43,17 @@ class RegistroFragment : Fragment() {
         val viewRegister = inflater.inflate(R.layout.fragment_registro, container, false)
 
         viewRegister.register.setOnClickListener {
-            (activity as NavigationHost).navigateTo(LoginFragment(), false)
-            viewRegister.visibility = View.GONE
-        }
+            if(!isValidString(txtEmailRegister.text!!) && !isPasswordValid(txtIpasswordRegister.text!!)){
+                txtEmailRegister.error = "Por favor ingresa un email valido"
+                txtIpasswordRegister.error = getString(R.string.error_password)
 
+        } else{
+                txtEmailRegister.error = null
+                txtIpasswordRegister.error
+                (activity as NavigationHost).navigateTo(LoginFragment(), false)
+                viewRegister.visibility = View.GONE
+            }
+        }
         return viewRegister
     }
 
@@ -66,4 +76,11 @@ class RegistroFragment : Fragment() {
                 }
             }
     }
+}
+
+private fun isPasswordValid(text: Editable?): Boolean{
+    return text != null && text.length>=8
+}
+private fun isValidString(text: Editable?):Boolean{
+    return text!=null && android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
 }
