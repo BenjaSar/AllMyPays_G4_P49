@@ -43,7 +43,7 @@ class RegistroFragment : Fragment() {
         val viewRegister = inflater.inflate(R.layout.fragment_registro, container, false)
 
         viewRegister.register.setOnClickListener {
-            if(!isValidString(txtEmailRegister.text!!) && !isPasswordValid(txtIpasswordRegister.text!!)){
+            if(!isValidString(txtEmailRegister.text!!) || !isPasswordValid(txtIpasswordRegister.text!!)){
                 txtEmailRegister.error = "Por favor ingresa un email valido"
                 txtIpasswordRegister.error = getString(R.string.error_password)
 

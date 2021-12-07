@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import androidx.fragment.app.FragmentActivity
 
-/*class DBHelper(context:FragmentActivity?):
+class DBHelper(context:FragmentActivity?):
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATA_VERSION) {
     companion object {
         private val DATABASE_NAME = "info"
@@ -24,6 +24,11 @@ import androidx.fragment.app.FragmentActivity
         )
 
     }
+
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        TODO("Not yet implemented")
+    }
+
     fun insert(name:String, email:String, password:String, passwordC:String){
         val data= ContentValues()
 
@@ -37,12 +42,20 @@ import androidx.fragment.app.FragmentActivity
         db.close()
     }
 
-    fun edit(Id:Int, name: String, password: String, passwordC: String){
+    fun edit(Id:Int, name: String, email:String, password: String, passwordC: String){
         val args = arrayOf(Id.toString())
         val data = ContentValues()
 
+        data.put(Tables.information._nombre, name)
+        data.put(Tables.information._correoE, email)
+        data.put(Tables.information._password, password)
+        data.put(Tables.information._passwordC, passwordC)
+
+        val db = this.writableDatabase
+        db.update(Tables.information.TABLE_NAME, data, "_id=?", args)
+        db.close()
+    }
 
     }
-    }
-*/
+
 

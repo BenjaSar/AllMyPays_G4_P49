@@ -53,7 +53,7 @@ class PerfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val buttonConfirmar = view.findViewById<Button>(R.id.confirmar)
         buttonConfirmar?.setOnClickListener {
-            if(!isValidString(txtIEmail.text!!) && !isPasswordValid(txtIpassword.text!!)){
+            if(!isValidString(txtIEmail.text!!) || !isPasswordValid(txtIpassword.text!!)){
                 txtIEmail.error = "Por favor ingresa un email valido"
                 txtIpassword.error = getString(R.string.error_password)
             }

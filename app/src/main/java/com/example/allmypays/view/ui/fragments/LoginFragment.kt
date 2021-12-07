@@ -25,7 +25,7 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.login_fragment, container, false)
         view.login.setOnClickListener {
-            if (!isPasswordValid(password_edit_text.text!!) && !isValidString(etMail.text)) {
+            if (!isPasswordValid(password_edit_text.text!!) || !isValidString(etMail.text)) {
                 password.error = getString(R.string.error_password)
                 etMail.error = "Por favor ingresa un email valido"
             } else {
