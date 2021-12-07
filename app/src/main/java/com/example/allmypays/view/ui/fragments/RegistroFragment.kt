@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import com.example.allmypays.databinding.FragmentRegistroBinding
+import data.DBHelper
 import kotlinx.android.synthetic.main.fragment_registro.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
-import kotlinx.android.synthetic.main.perfil_fragment.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +28,13 @@ class RegistroFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    //Manejo de datos
+    private var _binding: FragmentRegistroBinding? = null
+
+    //Guardado y recuperacion de los datos
+    private val binding get() = _binding!!
+    //Variable para base de datos
+    lateinit var informacionDBHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +65,35 @@ class RegistroFragment : Fragment() {
         }
         return viewRegister
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //Configuracion almacenamiento de datos
+        binding.register.setOnClickListener {
+            if(binding.txtINameRegister.text!!.isNotBlank() &&
+                    binding.txtEmailRegister.text!!.isNotBlank() &&
+                    binding.txtIpasswordRegister.text!!.isNotBlank()&&
+                    binding.txtIpasswordCRegister.text!!.isNotBlank()){
+                //Conexion con la db
+                informacionDBHelper.insert(binding.txtINameRegister.text.toString(),
+                    binding.txtEmailRegister.text.toString(),
+                    binding.txtIpasswordRegister.text.toString(),
+                    binding.txtIpasswordCRegister.text.toString()
+                )
+                Toast.makeText(activity, "El registro fue efectuado de manera exitosa", Toast.LENGTH_LONG).show()
+                //Limpieza de los campos editables
+                binding.txtINameRegister.text!!.clear()
+                binding.txtEmailRegister.text!!.clear()
+                binding.txtIpasswordRegister.text!!.clear()
+                binding.txtIpasswordCRegister.text!!.clear()
+            } else{
+                Toast.makeText(activity, "Error al realizar el registro del usuario", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
+
+
 
     companion object {
         /**

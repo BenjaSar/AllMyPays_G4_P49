@@ -62,6 +62,7 @@
             app:boxStrokeWidthFocused="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtINamePerfil"
                 android:layout_width="340dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -85,7 +86,7 @@
             app:boxStrokeWidthFocused="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtIEmail"
+                android:id="@+id/txtIEmailPerfil"
                 android:layout_width="340dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -151,6 +152,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtIpasswordCPerfil"
                 android:layout_width="340dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

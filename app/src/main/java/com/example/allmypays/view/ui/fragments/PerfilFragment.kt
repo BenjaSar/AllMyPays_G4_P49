@@ -1,5 +1,6 @@
 package com.example.allmypays.view.ui.fragments
 
+import android.database.sqlite.SQLiteDatabase
 import android.os.Bundle
 import android.text.Editable
 import androidx.fragment.app.Fragment
@@ -7,9 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import com.example.allmypays.databinding.PerfilFragmentBinding
+import data.DBHelper
+import data.Tables
 import kotlinx.android.synthetic.main.perfil_fragment.*
 import kotlinx.android.synthetic.main.perfil_fragment.view.*
 
@@ -27,6 +32,14 @@ class PerfilFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    //Manejo de datos
+    private var _binding: PerfilFragmentBinding? = null
+
+    //Guardado y recuperacion de los datos
+    private val binding get() = _binding!!
+    //Variable para base de datos
+    lateinit var informacionDBHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,15 +66,51 @@ class PerfilFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val buttonConfirmar = view.findViewById<Button>(R.id.confirmar)
         buttonConfirmar?.setOnClickListener {
-            if(!isValidString(txtIEmail.text!!) || !isPasswordValid(txtIpassword.text!!)){
-                txtIEmail.error = "Por favor ingresa un email valido"
+            if(!isValidString(txtIEmailPerfil.text!!) || !isPasswordValid(txtIpassword.text!!)){
+                txtIEmailPerfil.error = "Por favor ingresa un email valido"
                 txtIpassword.error = getString(R.string.error_password)
             }
             else{
-                txtIEmail.error = null
+                txtIEmailPerfil.error = null
                 txtIpassword.error = null
                 findNavController().navigate(R.id.navperfilFragment)
             }
+        }
+
+        binding.confirmar.setOnClickListener {
+            if(binding.txtINamePerfil.text!!.isNotBlank() &&
+                binding.txtIEmailPerfil.text!!.isNotBlank() &&
+                binding.txtIpassword.text!!.isNotBlank() &&
+                binding.txtIpasswordCPerfil.text!!.isNotBlank()
+            ){
+                //Conexion con la db
+                informacionDBHelper.edit(1,binding.txtINamePerfil.toString(),
+                    binding.txtIEmailPerfil.text.toString(),
+                    binding.txtIpassword.text.toString(),
+                    binding.txtIpasswordCPerfil.text.toString()
+                )
+                Toast.makeText(activity, "El registro fue actualizado de manera exitosa", Toast.LENGTH_LONG).show()
+                //Limpieza de los campos editables
+                binding.txtINamePerfil.text!!.clear()
+                binding.txtIEmailPerfil.text!!.clear()
+                binding.txtIpassword.text!!.clear()
+                binding.txtIpasswordCPerfil.text!!.clear()
+            }else{
+                Toast.makeText(activity, "Error al realizar la actualización del usuario", Toast.LENGTH_LONG).show()
+            }
+            //Recuperacion de datos
+            val db: SQLiteDatabase = informacionDBHelper.readableDatabase
+            val cursor  = db.rawQuery("SELECT * FROM " + Tables.information.TABLE_NAME, null)
+
+            if(cursor.moveToFirst()){
+                do{
+                    binding.txtINamePerfil.setText(cursor.getString(1).toString())
+                    binding.txtIEmailPerfil.setText(cursor.getString(2).toString())
+                    binding.txtIpassword.setText(cursor.getString(3).toString())
+                    binding.txtIpasswordCPerfil.setText(cursor.getString(4).toString())
+                }while (cursor.moveToNext())
+            }
+
         }
     }
     companion object {
