@@ -68,6 +68,11 @@ class LoginFragment : Fragment() {
                     if (task.isSuccessful) {
 
                     } else {
+                        Toast.makeText(
+                            activity,
+                            "El usuario no se encuentra registrado",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
             }else{
