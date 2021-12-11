@@ -2,46 +2,33 @@ package com.example.allmypays.view.ui.fragments
 
 import android.os.Bundle
 import android.text.Editable
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
 import com.example.allmypays.databinding.FragmentRegistroBinding
-import data.DBHelper
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_registro.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RegistroFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegistroFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-    //Manejo de datos
-    private var _binding: FragmentRegistroBinding? = null
+    private lateinit var auth: FirebaseAuth
+    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+
 
     //Guardado y recuperacion de los datos
-    private val binding get() = _binding!!
-    //Variable para base de datos
-    lateinit var informacionDBHelper: DBHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
+        auth = FirebaseAuth.getInstance()
     }
 
     override fun onCreateView(
@@ -50,13 +37,12 @@ class RegistroFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val viewRegister = inflater.inflate(R.layout.fragment_registro, container, false)
-
         viewRegister.register.setOnClickListener {
-            if(!isValidString(txtEmailRegister.text!!) || !isPasswordValid(txtIpasswordRegister.text!!)){
+            if (!isValidString(txtEmailRegister.getText()!!) || !isPasswordValid(txtIpasswordRegister.getText()!!)) {
                 txtEmailRegister.error = "Por favor ingresa un email valido"
                 txtIpasswordRegister.error = getString(R.string.error_password)
 
-        } else{
+            } else {
                 txtEmailRegister.error = null
                 txtIpasswordRegister.error
                 (activity as NavigationHost).navigateTo(LoginFragment(), false)
@@ -68,57 +54,57 @@ class RegistroFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val registerBtn = view.findViewById<View>(R.id.register)
 
-        //Configuracion almacenamiento de datos
-        binding.register.setOnClickListener {
-            if(binding.txtINameRegister.text!!.isNotBlank() &&
-                    binding.txtEmailRegister.text!!.isNotBlank() &&
-                    binding.txtIpasswordRegister.text!!.isNotBlank()&&
-                    binding.txtIpasswordCRegister.text!!.isNotBlank()){
-                //Conexion con la db
-                informacionDBHelper.insert(binding.txtINameRegister.text.toString(),
-                    binding.txtEmailRegister.text.toString(),
-                    binding.txtIpasswordRegister.text.toString(),
-                    binding.txtIpasswordCRegister.text.toString()
-                )
-                Toast.makeText(activity, "El registro fue efectuado de manera exitosa", Toast.LENGTH_LONG).show()
-                //Limpieza de los campos editables
-                binding.txtINameRegister.text!!.clear()
-                binding.txtEmailRegister.text!!.clear()
-                binding.txtIpasswordRegister.text!!.clear()
-                binding.txtIpasswordCRegister.text!!.clear()
-            } else{
-                Toast.makeText(activity, "Error al realizar el registro del usuario", Toast.LENGTH_LONG).show()
+        registerBtn.setOnClickListener{
+
+            if (txtEmailRegister.text.toString()!!.isNotBlank() &&
+                txtIpasswordRegister.text.toString()!!.isNotBlank() &&
+                txtINameRegister.text.toString()!!.isNotBlank()) {
+
+                auth.createUserWithEmailAndPassword(txtEmailRegister.text.toString()!!,
+                    txtIpasswordRegister.text.toString()!!
+                ).addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val user:FirebaseUser = auth.currentUser!!
+                            db.collection("users").document(user.uid).set(
+                                hashMapOf("name" to txtINameRegister.text.toString(),
+                                "email" to txtEmailRegister.text.toString()))
+                            Toast.makeText(
+                                activity,
+                                "El registro fue efectuado de manera exitosa",
+                                Toast.LENGTH_LONG
+                            ).show()
+                            //Limpieza de los campos editables
+                            txtINameRegister.text.clear()
+                            txtEmailRegister.text.clear()
+                            txtIpasswordRegister.text.clear()
+                            txtIpasswordCRegister.text.clear()
+                        } else {
+                            Toast.makeText(
+                                activity,
+                                "El usuario ya se encuentra registrado",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+                    }
+
+            } else {
+                Toast.makeText(
+                    activity,
+                    "Error al realizar el registro del usuario",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
     }
 
 
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegistroFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegistroFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun isPasswordValid(text: Editable?): Boolean {
+        return text != null && text.length >= 8
     }
-}
 
-private fun isPasswordValid(text: Editable?): Boolean{
-    return text != null && text.length>=8
-}
-private fun isValidString(text: Editable?):Boolean{
-    return text!=null && android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
+    private fun isValidString(text: Editable?): Boolean {
+        return text != null && android.util.Patterns.EMAIL_ADDRESS.matcher(text).matches()
+    }
 }
