@@ -4,26 +4,20 @@ import android.os.Bundle
 import android.text.Editable
 import android.view.*
 import android.view.View.GONE
-import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
-import kotlinx.android.synthetic.main.fragment_main.view.*
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_registro.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
-import kotlinx.android.synthetic.main.login_fragment.view.*
 
 class RegistroFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
-    private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
+    val db = Firebase.firestore
 
 
     //Guardado y recuperacion de los datos
@@ -44,21 +38,6 @@ class RegistroFragment : Fragment() {
             (activity as NavigationHost).navigateTo(MainFragment(), false)
             viewRegister.visibility = View.GONE
         }
-        //viewRegister.register.setOnClickListener {
-
-        /*viewRegister.register.setOnClickListener {
->>>>>>> 4856975dc0a40031ce9df54817f54efec5330a15
-            if (!isValidString(txtEmailRegister.getText()!!) || !isPasswordValid(txtIpasswordRegister.getText()!!)) {
-                txtEmailRegister.error = "Por favor ingresa un email valido"
-                txtIpasswordRegister.error = getString(R.string.error_password)
-
-            } else {
-                txtEmailRegister.error = null
-                txtIpasswordRegister.error
-                (activity as NavigationHost).navigateTo(LoginFragment(), false)
-                viewRegister.visibility = View.GONE
-            }
-        }*/
         return viewRegister
     }
 
@@ -81,8 +60,8 @@ class RegistroFragment : Fragment() {
                                 val name = user.displayName
                             }
                             db.collection("users").document(user.uid).set(
-                                hashMapOf(user.displayName to txtINameRegister.text.toString(),
-                                "email" to txtEmailRegister.text.toString()))
+                                hashMapOf("name" to txtINameRegister.text.toString(),
+                                    "email" to txtEmailRegister.text.toString()))
                             Toast.makeText(
                                 activity,
                                 "El registro fue efectuado de manera exitosa",
@@ -93,13 +72,9 @@ class RegistroFragment : Fragment() {
                             txtEmailRegister.text.clear()
                             txtIpasswordRegister.text.clear()
                             txtIpasswordCRegister.text.clear()
-                            if(txtINameRegister.text.toString().isEmpty() && txtEmailRegister.text.toString().isEmpty()
-                                && txtIpasswordRegister.text.toString().isEmpty() && txtIpasswordCRegister.text.toString().isEmpty()){
-                                (activity as NavigationHost).navigateTo(LoginFragment(), false)
-                                val f = view.findViewById<View>(R.id.fragmentRegistro)
-                                f.visibility = GONE
-                            }
-
+                            (activity as NavigationHost).navigateTo(LoginFragment(), false)
+                            val f = view.findViewById<View>(R.id.fragmentRegistro)
+                            f.visibility = GONE
                         } else {
                             Toast.makeText(
                                 activity,
