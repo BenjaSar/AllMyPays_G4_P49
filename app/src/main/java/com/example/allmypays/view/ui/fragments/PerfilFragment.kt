@@ -77,7 +77,7 @@ class PerfilFragment : Fragment() {
             }
         }
 
-        binding.confirmar.setOnClickListener {
+      /*  binding.confirmar.setOnClickListener {
             if(binding.txtINamePerfil.text!!.isNotBlank() &&
                 binding.txtIEmailPerfil.text!!.isNotBlank() &&
                 binding.txtIpassword.text!!.isNotBlank() &&
@@ -111,7 +111,7 @@ class PerfilFragment : Fragment() {
                 }while (cursor.moveToNext())
             }
 
-        }
+        }*/
     }
     companion object {
         /**

@@ -7,7 +7,11 @@ import android.view.LayoutInflater
 import android.view.*
 import android.view.View.GONE
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
 import com.example.allmypays.*
 import com.example.allmypays.databinding.LoginFragmentBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -29,7 +33,7 @@ class LoginFragment : Fragment() {
 
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.login_fragment, container, false)
-        view.login.setOnClickListener {
+        /*view.login.setOnClickListener {
             if (!isPasswordValid(passwordEditText.text!!) || !isValidString(etMail.text)) {
                 password.error = getString(R.string.error_password)
                 etMail.error = "Por favor ingresa un email valido"
@@ -51,7 +55,7 @@ class LoginFragment : Fragment() {
                 password.error = null
             }
             false
-        }
+        }*/
         return view
     }
 
@@ -66,6 +70,9 @@ class LoginFragment : Fragment() {
             if (email!!.isNotBlank() && password.isNotBlank()) {
                 auth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                       // findNavController().navigate(R.id.navhomeFragment)
+                       (activity as NavigationHost).navigateTo(HomeFragment(), false)
+                        view.findViewById<ConstraintLayout>(R.id.loginFragment).visibility= GONE
 
                     } else {
                         Toast.makeText(
