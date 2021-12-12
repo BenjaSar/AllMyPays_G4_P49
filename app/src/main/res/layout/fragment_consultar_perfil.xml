@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ui.fragments.ConsultarPerfilFragment">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="524dp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-11dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:background="@drawable/rectangle_3">
+
+        <LinearLayout
+            android:id="@+id/relativeLayoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-11dp"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="false"
+                android:layout_marginStart="42dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/back_arrow_white">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/profileTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="false"
+                android:layout_gravity="left"
+                android:layout_marginStart="10dp"
+                android:gravity="left"
+                android:text="@string/mi_perfil"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="35dp"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginEnd="120dp"
+            android:src="@drawable/logo2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="left"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="340dp"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/my_font"
+            android:gravity="left"
+            android:lineHeight="44dp"
+            android:text="@string/nombre_completo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textFontWeight="900"
+            android:textSize="34dp"
+            tools:ignore="RtlCompat" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/profielInformation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="550dp"
+        android:elevation="15dp"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:id="@+id/UserEmailLabel"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="left"
+            android:layout_marginStart="52dp"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/my_font"
+            android:gravity="left"
+            android:lineHeight="44dp"
+            android:text="@string/correo"
+            android:textAlignment="textStart"
+            android:textColor="@color/DarkSecondary"
+            android:textFontWeight="700"
+            android:textSize="16dp"
+            tools:ignore="RtlCompat" />
+        <TextView
+            android:id="@+id/UserEmail"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="left"
+            android:layout_marginStart="52dp"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="@font/my_font"
+            android:gravity="left"
+            android:lineHeight="44dp"
+            android:text="correo@correo.com"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimaryDark"
+            android:textFontWeight="400"
+            android:textSize="20dp"
+            android:layout_marginTop="20dp"
+            tools:ignore="RtlCompat"/>
+
+        <Button
+            android:id="@+id/Editar"
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/UserEmail"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="54dp"
+            android:gravity="center"
+            android:text="@string/editar_perfil"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:background="@drawable/button_rounded"
+            app:backgroundTint="@color/colorAccent"
+            android:fontFamily="@font/my_font"
+            android:textFontWeight="900"
+            android:letterSpacing="0"/>
+    </RelativeLayout>
+</FrameLayout>

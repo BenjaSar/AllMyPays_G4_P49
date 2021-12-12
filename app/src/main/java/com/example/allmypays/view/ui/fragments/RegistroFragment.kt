@@ -17,6 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_main.view.*
 import kotlinx.android.synthetic.main.fragment_registro.*
 import kotlinx.android.synthetic.main.fragment_registro.view.*
+import kotlinx.android.synthetic.main.login_fragment.view.*
 
 class RegistroFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
@@ -37,6 +38,11 @@ class RegistroFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val viewRegister = inflater.inflate(R.layout.fragment_registro, container, false)
+
+        viewRegister.backToMain.setOnClickListener {
+            (activity as NavigationHost).navigateTo(MainFragment(), false)
+            viewRegister.visibility = View.GONE
+        }
         viewRegister.register.setOnClickListener {
             if (!isValidString(txtEmailRegister.getText()!!) || !isPasswordValid(txtIpasswordRegister.getText()!!)) {
                 txtEmailRegister.error = "Por favor ingresa un email valido"

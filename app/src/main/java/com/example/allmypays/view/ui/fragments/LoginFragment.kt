@@ -6,11 +6,14 @@ import android.text.Editable
 import android.view.LayoutInflater
 import android.view.*
 import android.view.View.GONE
+import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.allmypays.*
 import com.example.allmypays.databinding.LoginFragmentBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.home_fragment.view.*
 import kotlinx.android.synthetic.main.login_fragment.*
 import kotlinx.android.synthetic.main.login_fragment.view.*
 
@@ -28,7 +31,14 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
 
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
         val view = inflater.inflate(R.layout.login_fragment, container, false)
+
+        view.backArrow.setOnClickListener {
+            (activity as NavigationHost).navigateTo(MainFragment(), false)
+            view.visibility = View.GONE
+        }
+
         view.login.setOnClickListener {
             if (!isPasswordValid(passwordEditText.text!!) || !isValidString(etMail.text)) {
                 password.error = getString(R.string.error_password)

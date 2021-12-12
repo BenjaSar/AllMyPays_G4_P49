@@ -178,7 +178,10 @@
             android:text="@string/confirmar"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="25sp"
-            app:backgroundTint="@color/colorAccent" />
+            app:backgroundTint="@color/colorAccent"
+            android:fontFamily="@font/my_font"
+            android:textFontWeight="900"
+            android:letterSpacing="0"/>
 
         <Button
             android:id="@+id/Cancelar"
@@ -193,10 +196,15 @@
             android:layout_marginEnd="54dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/rojo"
+            app:backgroundTintMode="screen"
             android:gravity="center"
+            android:backgroundTint="@color/white"
             android:text="@string/cancelar"
-            android:textColor="#BF0808"
+            android:textColor="@color/error_red"
             android:textSize="25sp"
+            android:fontFamily="@font/my_font"
+            android:textFontWeight="900"
+            android:letterSpacing="0"
     />
 
     </RelativeLayout>

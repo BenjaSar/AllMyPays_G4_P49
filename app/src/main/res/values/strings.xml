@@ -29,6 +29,7 @@
     <string name="mis_recordatorio">Mis recordatorio</string>
     <string name="nombre_recordatorio">Nombre recordatorio</string>
     <string name="editar">EDITAR</string>
+    <string name="editar_perfil">EDITAR PERFIL</string>
     <string name="eliminar">ELIMINAR</string>
     <string name="editar_recordatorio">Editar recordatorio</string>
     <string name="registro">Registro</string>

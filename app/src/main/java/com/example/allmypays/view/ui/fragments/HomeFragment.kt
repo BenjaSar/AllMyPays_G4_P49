@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         }
 
        view.image_21.setOnClickListener {
-           (activity as NavigationHost).navigateTo(PerfilFragment(), false)
+           (activity as NavigationHost).navigateTo(ConsultarPerfilFragment(), false)
            view.visibility = View.GONE
        }
         return view
