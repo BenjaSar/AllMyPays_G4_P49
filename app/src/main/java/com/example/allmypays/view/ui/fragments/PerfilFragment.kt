@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
-import com.example.allmypays.databinding.PerfilFragmentBinding
 import data.DBHelper
 import data.Tables
 import kotlinx.android.synthetic.main.perfil_fragment.*
@@ -34,10 +33,10 @@ class PerfilFragment : Fragment() {
     private var param2: String? = null
 
     //Manejo de datos
-    private var _binding: PerfilFragmentBinding? = null
+    // private var _binding: PerfilFragmentBinding? = null
 
     //Guardado y recuperacion de los datos
-    private val binding get() = _binding!!
+    // private val binding get() = _binding!!
     //Variable para base de datos
     lateinit var informacionDBHelper: DBHelper
 

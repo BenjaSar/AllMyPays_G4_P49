@@ -7,7 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
+import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import kotlinx.android.synthetic.main.fragment_consultar_perfil.view.*
+import kotlinx.android.synthetic.main.login_fragment.view.*
+import kotlinx.android.synthetic.main.login_fragment.view.backArrow
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +41,20 @@ class ConsultarPerfilFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consultar_perfil, container, false)
+
+        val viewConsultarPerfil = inflater.inflate(R.layout.fragment_consultar_perfil, container, false)
+
+        viewConsultarPerfil.backMain.setOnClickListener {
+            (activity as NavigationHost).navigateTo(HomeFragment(), false)
+            viewConsultarPerfil.visibility = View.GONE
+        }
+
+        viewConsultarPerfil.EditarPerfil.setOnClickListener {
+            (activity as NavigationHost).navigateTo(PerfilFragment(), false)
+            viewConsultarPerfil.visibility = View.GONE
+        }
+        return viewConsultarPerfil
+
     }
 
     companion object {
