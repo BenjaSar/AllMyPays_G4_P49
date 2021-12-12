@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
+    android:id="@+id/fragmentRegistro"
     tools:context=".view.ui.fragments.RegistroFragment">
 
     <RelativeLayout
@@ -33,8 +34,7 @@
                 android:layout_alignParentEnd="false"
                 android:layout_marginStart="42dp"
                 android:layout_marginTop="40dp"
-                android:src="@drawable/back_arrow_white">
-            </ImageView>
+                android:src="@drawable/back_arrow_white"></ImageView>
         </RelativeLayout>
 
         <TextView

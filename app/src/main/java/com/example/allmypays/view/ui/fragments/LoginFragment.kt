@@ -8,7 +8,10 @@ import android.view.*
 import android.view.View.GONE
 import android.widget.Button
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.allmypays.*
 import com.example.allmypays.databinding.LoginFragmentBinding
@@ -39,7 +42,11 @@ class LoginFragment : Fragment() {
             view.visibility = View.GONE
         }
 
-        view.login.setOnClickListener {
+
+        //view.login.setOnClickListener {
+
+        /*view.login.setOnClickListener {
+>>>>>>> 4856975dc0a40031ce9df54817f54efec5330a15
             if (!isPasswordValid(passwordEditText.text!!) || !isValidString(etMail.text)) {
                 password.error = getString(R.string.error_password)
                 etMail.error = "Por favor ingresa un email valido"
@@ -61,7 +68,7 @@ class LoginFragment : Fragment() {
                 password.error = null
             }
             false
-        }
+        }*/
         return view
     }
 
@@ -76,8 +83,16 @@ class LoginFragment : Fragment() {
             if (email!!.isNotBlank() && password.isNotBlank()) {
                 auth.signInWithEmailAndPassword(email!!, password!!).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                       // findNavController().navigate(R.id.navhomeFragment)
+                       (activity as NavigationHost).navigateTo(HomeFragment(), false)
+                        view.findViewById<ConstraintLayout>(R.id.loginFragment).visibility= GONE
 
                     } else {
+                        Toast.makeText(
+                            activity,
+                            "El usuario no se encuentra registrado",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
                 }
             }else{
