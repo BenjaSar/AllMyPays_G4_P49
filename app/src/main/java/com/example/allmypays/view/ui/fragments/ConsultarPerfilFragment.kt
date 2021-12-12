@@ -5,35 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.fragment.findNavController
 import com.example.allmypays.NavigationHost
 import com.example.allmypays.R
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_consultar_perfil.*
 import kotlinx.android.synthetic.main.fragment_consultar_perfil.view.*
-import kotlinx.android.synthetic.main.login_fragment.view.*
-import kotlinx.android.synthetic.main.login_fragment.view.backArrow
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ConsultarPerfilFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ConsultarPerfilFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ConsultarPerfilFragment(userUid: String) : Fragment() {
+
+    val db = FirebaseFirestore.getInstance()
+    val userUid = userUid
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+        db.collection("users").document(userUid).get()
+            .addOnSuccessListener {
+                nombreCompleto.setText(it.get("name") as String?)
+                UserEmail.setText(it.get("email") as String?)
+            }
     }
 
     override fun onCreateView(
@@ -45,35 +35,16 @@ class ConsultarPerfilFragment : Fragment() {
         val viewConsultarPerfil = inflater.inflate(R.layout.fragment_consultar_perfil, container, false)
 
         viewConsultarPerfil.backMain.setOnClickListener {
-            (activity as NavigationHost).navigateTo(HomeFragment(), false)
+            (activity as NavigationHost).navigateTo(HomeFragment(userUid), false)
             viewConsultarPerfil.visibility = View.GONE
         }
 
         viewConsultarPerfil.EditarPerfil.setOnClickListener {
-            (activity as NavigationHost).navigateTo(PerfilFragment(), false)
+            (activity as NavigationHost).navigateTo(PerfilFragment(userUid), false)
             viewConsultarPerfil.visibility = View.GONE
         }
         return viewConsultarPerfil
 
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ConsultarPerfilFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ConsultarPerfilFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

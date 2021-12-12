@@ -56,9 +56,6 @@ class RegistroFragment : Fragment() {
                 ).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             val user:FirebaseUser = auth.currentUser!!
-                            user?.let {
-                                val name = user.displayName
-                            }
                             db.collection("users").document(user.uid).set(
                                 hashMapOf("name" to txtINameRegister.text.toString(),
                                     "email" to txtEmailRegister.text.toString()))
