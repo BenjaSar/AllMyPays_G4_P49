@@ -68,11 +68,18 @@ class PerfilFragment(userUid: String) : Fragment() {
             if(txtIpassword.text.toString()!!.isNotBlank() &&
                 txtIpasswordCPerfil.text.toString()!!.isNotBlank()){
                 if(txtIpassword.text.toString().equals(txtIpasswordCPerfil.text.toString())){
+
                     auth.updatePassword(txtIpassword.text.toString()).addOnCompleteListener { task ->
                         if (task.isSuccessful) {
                             Toast.makeText(
                                 activity,
                                 "Contraseña actualizada correctamente",
+                                Toast.LENGTH_LONG
+                            ).show()
+                    }else{
+                            Toast.makeText(
+                                activity,
+                                "Error al actualizar la contraseña",
                                 Toast.LENGTH_LONG
                             ).show()
                     }
